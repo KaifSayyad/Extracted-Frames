@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'style/home.css' ?v=2%}">
+    <div class="gekko">
+        {% for p in model %}
+            <div class="mySlides my-3">
+                <img src="{{p.image.url}}" alt="">
+            </div>
+        {% endfor %}
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
